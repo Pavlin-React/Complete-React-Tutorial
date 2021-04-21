@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import BlogDetails from './BlogDetails';
 import Create from './Create';
 import Home from './Home';
 import Navbar from './Navbar';
@@ -8,17 +9,17 @@ function App() {
   return (
     <Router>
       <div className="App">
-      <Navbar />
-      <div className='content'>
-        <Switch>
-          <Route path='/' exact><Home /></Route>
-        </Switch>
-        <Route path='/create'><Create /></Route>
-        <Switch>
-
-        </Switch>
+        <Navbar />
+        <div className='content'>
+          <Switch>
+            <Route path='/' exact><Home /></Route>
+          </Switch>
+            <Route path='/create'><Create /></Route>
+          <Switch>
+            <Route path='/blogs/:id'><BlogDetails /></Route>
+          </Switch>
+        </div>
       </div>
-    </div>
     </Router>
   );
 }
