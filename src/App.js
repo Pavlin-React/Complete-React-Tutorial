@@ -3,6 +3,7 @@ import BlogDetails from './BlogDetails';
 import Create from './Create';
 import Home from './Home';
 import Navbar from './Navbar';
+import NotFound from './NotFound';
 
 function App() {
 
@@ -13,10 +14,9 @@ function App() {
         <div className='content'>
           <Switch>
             <Route path='/' exact><Home /></Route>
-          </Switch>
             <Route path='/create'><Create /></Route>
-          <Switch>
             <Route path='/blogs/:id'><BlogDetails /></Route>
+            <Route path='*' ><NotFound></NotFound></Route>
           </Switch>
         </div>
       </div>
